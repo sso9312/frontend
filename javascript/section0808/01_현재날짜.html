@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>01_현재날짜.html</title>
+        <meta charset="utf-8">
+        <style>
+            #clock{
+                width: 500px;
+                height: 40px;
+                color: blue;
+                font-weight: bold;
+                font-size: 30px;
+                position: relative;
+                margin: 0 auto;
+
+
+
+            }
+        </style>
+    </head>
+    <body>
+
+        <h3>Date객체</h3>
+        현재날짜 <div id="clock"></div>
+        <script>
+            //문제) 날짜변수 d값을 이용해서 날짜 정보를 아래와 같이 구성해서 id=clock에 출력하시오
+            //      출력결과) 2023.08.08 (화) PM 2:09:13
+            //      글자갯수 2글자 : 월,일,분,초 if문 이용
+            //      오전 AM, 오후 PM (정오 12시 부터)
+
+            const d=new Date(); //시스템의 현재 날짜 정보 가져오기(년월일시분초)
+
+            let today=""; //결과값
+      
+            today += d.getFullYear()+".";//2023.
+            
+            if(d.getMonth()+1<10) {
+                today += "0";
+            }//if end
+            today += d.getMonth()+1 + ".";
+
+            if(d.getDate()<10){
+                today += "0";
+            }//if end
+            today += d.getDate();
+
+            switch(d.getDay()){
+                case 0 : today+=" (일) "; break;
+                case 1 : today+=" (월) "; break;
+                case 2 : today+=" (화) "; break;
+                case 3 : today+=" (수) "; break;
+                case 4 : today+=" (목) "; break;
+                case 5 : today+=" (금) "; break;
+                case 6 : today+=" (토) "; break;
+            }//switch end
+
+            if(d.getHours()<12) {
+                today += "AM";                      //2023.08.08(화)AM
+            } else {
+                today += "PM";
+            }//if end
+
+            if(d.getHours()<13) {
+                today += d.getHours() + ":";
+            } else {
+                today += d.getHours()-12 + ":";
+            }//if end
+            if(d.getMinutes()<10){
+                today+="0";
+            }//if end
+            today+=d.getMinutes() + ":";
+
+            if(d.getSeconds()<10){
+                today+="0";
+            }//if end
+            today+=d.getSeconds();
+
+
+            document.getElementById("clock").innerText = today;
+
+            // 오늘의 오류 () 빠뜨려서  getHouars를 불러오지 못함
+           
+        
+        
+          
+        </script>
+    </body>
+</html>

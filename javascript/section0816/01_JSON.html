@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>01_JSON.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>JSON</h3>
+
+        <script>
+        
+        //참조 https://www.w3schools.com/js/js_json_intro.asp
+        /*
+            ●XML문법  
+                예) <database>
+                            <driver>OracleDriver</driver>
+                            <username>system</username>
+                            <password>1234</password>
+                        </database>
+            ●JSON 기본 구조
+                예) {driver:"OracleDriver", "username":"system", password:'1234', ~~}       
+        */
+
+        //1. Array 순수 배열
+       
+       /* let person=["John", "Doe", 46];
+        document.write(person.length);//3
+        document.write("<hr>");
+        document.write(person[0]);//3
+        document.write("<hr>");
+        document.write(person[1]);//3
+        document.write("<hr>");
+        document.write(person[2]);//3
+        document.write("<hr>");
+        */
+
+        /*let person=[];
+        person["firstName"]="John";
+        person["lastName"]="Doe";
+        person["age"]=46;
+
+        document.write(person["firstName"]);//John
+        document.write("<hr>");
+        document.write(person["lastName"]);//Doe
+        document.write("<hr>");
+        document.write(person["age"]);//46
+        document.write("<hr>");
+
+        document.write(person[0]);//undefined
+        document.write(person[1]);//undefined
+        document.write(person[2]);//undefined
+        */
+        ///////////////////////////////////////////////////
+        
+        //2. Json 변수 선언
+        //let person={"firstName":"John", "lastName":"Doe", "age":46};
+        //name에 " 는 생략가능
+        let person={firstName:"John", lastName:"Doe", age:46};
+
+        //JavaScript 접근
+        document.write(person["firstName"]);//John
+        document.write("<hr>");
+        document.write(person["lastName"]);//Doe
+        document.write("<hr>");
+        document.write(person["age"]);//46
+        document.write("<hr>");
+
+        //JSON 접근(추천)
+        document.write(person.firstName);//John
+        document.write("<hr>");
+        document.write(person.lastName);//Doe
+        document.write("<hr>");
+        document.write(person.age);//46
+        document.write("<hr>");
+        ///////////////////////////////////////////////////////////
+
+        //3.
+        let persons=[
+            {firstName:"John", lastName:"Doe", age:46}, //0
+            {firstName:"Tom", lastName:"Doe2", age:36},  //1
+            {firstName:"Jimmy", lastName:"Doe3", age:26} //2
+        ];
+        
+        document.write(persons.length);
+        document.write(persons[0]);//[object Object]
+        document.write(persons[1]);
+        document.write(persons[2]);
+        document.write("<hr>");
+
+        for(let i=0; i<persons.length; i++){
+            document.write(persons[i].firstName); 
+            document.write(persons[i].lastName);
+            document.write(persons[i].age);
+            document.write("<hr>");
+        }// for end
+
+        //  크롬 브라우저에서 F12 눌러서 확인
+        console.log(persons[0]);
+        console.log(persons[1]);
+        console.log(persons[2]);
+            
+
+
+        
+        </script>
+
+    </body>
+</html>

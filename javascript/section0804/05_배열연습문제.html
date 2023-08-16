@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>05_배열연습문제.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>배열 연습 문제</h3>
+
+        <script>
+        
+            let num=[7,8,-5,9,6];
+            let size=num.length;//5
+
+            document.write(num);
+            document.write("<hr>");
+
+            //문1)배열 요소의 전체 합을 구하시오 //25
+
+            //문2)음수의 갯수를 구하시오//1
+
+            //문3)최대값, 최소값을 각각 구하시오//9, -5
+
+            // 1) 내림차순 정렬한 후, 최대값과 최소값 구하기
+            num.sort(function(a,b){return b - a});//9 8 7 6 -5
+            document.write(num[0]);// 최대값
+            document.write("<hr>");
+            document.write(num[4]);// 최소값
+            document.write("<hr>");
+            document.write(num[size-1]);// 최소값
+            document.write("<hr>");
+            // 오름차순 정렬 후 
+
+
+            //문4)num[4]요소의 등수를 구하시오//4
+            /*
+                if(6<7)
+                if(6<8)
+                if(6<-5)
+                if(6<9)
+            */
+
+        </script>
+
+    </body>
+</html>

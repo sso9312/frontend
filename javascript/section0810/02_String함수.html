@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>02_String함수.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>String Methods</h3>
+
+        <script>
+
+            //참조 https://www.w3schools.com/js/js_string_methods.asp
+            
+            let str="Gone With The Wind";
+            document.write(str);
+            document.write("<hr>");
+            
+            document.write(str.length);     //글자갯수
+            document.write("<hr>");
+            
+            document.write(str.charAt(0));     //"G" 0번째글자
+            document.write("<hr>");
+           
+            document.write(str.charAt(17));     //"d" 마지막 글자
+            document.write("<hr>");
+            
+            document.write(str.toLowerCase());//전부 소문자 치환
+            document.write("<hr>");
+           
+            document.write(str.toUpperCase());//전부 대문자 치환
+            document.write("<hr>");
+
+            //첫번째 " n" ->"N" 으로 치환
+            document.write(str.replace("n" , "N"));
+            document.write("<hr>");
+
+            //글자 자르기 ★★★
+            document.write(str.substring(6, 12));//6번째~(12-1)번째 까지 "ith Th"
+            document.write("<hr>");
+
+            //"The"
+            document.write(str.substring(10, 13));
+            document.write("<hr>");
+
+            //맨 앞글자 자르기 "G"
+            document.write(str.substring(0, 1));
+            document.write("<hr>");
+
+            //맨 마지막 글자 자르기 "d"
+            document.write(str.substring(17, 18));
+            document.write("<hr>");
+            document.write(str.substring(str.length-1, str.length));
+            document.write("<hr>");
+
+            //문자열 분리하기
+            document.write(str.slice(10, 13));//"The"
+            document.write("<hr>");
+
+            //문자열 합치기
+            let text1="Hello";
+            let text2="World";
+
+            document.write(text1 + text2);
+            document.write("<hr>");
+
+            let text3=text1.concat(text2);
+            document.write(text3);              //"HelloWorld"
+            document.write("<hr>");
+
+            //문자열 맨앞, 맨뒤 공백제거하기
+            let text4="     Java Script     ";
+            document.write("#"+text4.trim()+"#"); //"#Java script#"
+            document.write("<hr>");
+
+            //4칸을 기준으로 빈칸은 *으로 앞에서 부터 채우기
+            let text5="9";
+            document.write(text5.padStart(4, "*")); //***9
+            document.write("<hr>");
+           
+            //4칸을 기준으로 빈칸은 *으로 뒤에서 부터 채우기
+            let text6="8";
+            document.write(text6.padEnd(4, "*")); //8***
+            document.write("<hr>");
+
+            //문) 주민번호를 이용해서 나이,성별을 구하시오
+            let jumin="1908104123456";//replace 이용 - 추출  //replace("-","");
+            let myYear=jumin.substring(0, 2); //"19"    태어난 년도
+            let myCode=jumin.substring(6, 7); //"4"     성별코드
+            
+            //"19" -> 19
+            myYear = parseInt(myYear);
+            //"4" -> 4
+            myCode = parseInt(myCode);
+            
+            //올해년도 0802 3번 조건문연습문제 참고
+            const d=new Date();
+            let cYear=d.getFullYear();           //2023
+
+          
+            //태어난 년도 완성하기
+            switch(myCode){
+                case 1 : 
+                case 2 : myYear = myYear+1900; break;
+                case 3 :
+                case 4 : myYear = myYear+2000; break;
+            }//swich end
+
+            //나이 구하기
+            myAge=2023-myYear;
+            document.write("나이 : " + myAge + "<hr>")
+
+            //성별 구하기
+            switch(myCode%2){
+                case 0 : document.write("성별 : 여자<hr>"); break;
+                case 1 : document.write("성별 : 남자<hr>"); break;
+            }//switch end
+
+            if(myCode==1 || myCode==3){
+                document.write("성별 : 남자<hr>");
+        
+            }//if end
+
+
+        </script>
+
+    </body>
+</html>

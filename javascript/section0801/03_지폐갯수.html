@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>03_지폐갯수.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <div id="demo"></div>
+
+        <script>
+        
+        //연습) 각 지폐갯수를 구해서 표작성해서 본문 id=demo에 출력하시오
+        /*
+            ┌────────────┐
+            │ 만원 │ 5장 │
+            ├────────────┤
+            | 천원 | 4장 |
+            ├────────────┤
+            | 백원 | 3장 |
+            ├────────────┤
+            | 십원 | 2장 |
+            └────────────┘
+        */
+        
+        let money=54320;
+        // document.write(money/10000); //5.432
+        //document.write("<hr>");
+        //document.write(money%1000); //4320
+        //document.write("<hr>");
+
+        let m = parseInt(money/10000); // 만원 5
+        money = money%10000;           //4320       money%=10000
+        
+        let c = parseInt(money/1000);  // 천원 4
+        money = money%1000; //320      // 320
+        
+        let b = parseInt(money/100);   // 백원 3
+        money = money%100;             // 20
+        
+        let s = parseInt(money/10);    // 십원 2
+
+        let result=""; //결과값
+        //result = result + "";
+        result += "<table border='1'>";    
+        result += "<tr>";    
+        result += "     <th>만원</th>";    
+        result += "     <td>" + m + "장</td>";
+        result += "</tr>";      
+        result += "<table border='1'>";    
+        result += "<tr>";    
+        result += "     <th>천원</th>";    
+        result += "     <td>" + c + "장</td>";
+        result += "</tr>";      
+        result += "<table border='1'>";    
+        result += "<tr>";    
+        result += "     <th>백원</th>";    
+        result += "     <td>" + b + "장</td>";
+        result += "</tr>";      
+        result += "<table border='1'>";    
+        result += "<tr>";    
+        result += "     <th>십원</th>";    
+        result += "     <td>" + s + "장</td>";
+        result += "</tr>"; 
+        result += "</table>";     
+            
+        //본문 id=demo에 출력
+        document.getElementById("demo").innerHTML = result;
+        
+        </script>
+    </body>
+</html>

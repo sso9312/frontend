@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>01_반복문연습문제.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>반복문 연습문제</h3>
+
+        <script>
+            //문1)1~100사이 중에서 짝수의 합, 홀수의 합을 각각 구하시오
+            //  출력결과    짝수의 합 : 2550
+            //             홀수의 합 : 2500
+            /*let count= 0;
+            let countt =0;
+            for(let a=1; a<=100; a=a+1){
+                
+                if(a%2==0){
+                    count = count + a;//count+=1 count++ ++count
+                } else {
+                if(a%2==1)
+                    countt=countt +a}//if end
+            }//for end
+            document.write("짝수의 합 : " + count + "<br>" + "홀수의 합 : " + countt);
+            document.write("<hr>");*/ //내가한거
+
+            let even=0; //짝수의 합
+            let odd=0; //홀수의 합
+
+            //1)
+            /*for(let a=1; a<=100; a=a+1) {
+                if(a%2==0) {
+                    even=even+a;
+                } else {
+                    odd=odd+a;
+                }//if end
+            }//for end */  //강사님 첫번째 방법
+            
+            //2)
+            let flag=false;
+            for(let a=1; a<=100; a=a+1) {
+                if(flag) {
+                    flag=false;
+                    even=even+a;
+                } else {
+                    flag=true;
+                    odd=odd+a;
+                }//if end
+            }//for end
+            /*
+                a=1 1<=100
+                            if(false)
+                            else{flag=true}
+                    2<=100
+                            if(true) {flag=false}
+                    3<=100
+                            if(false)
+                            else{flag=true}
+                    4<=100
+                            if(true) {flag=false}        
+            
+            */
+            document.write("짝수의 합 : "+ even);
+            document.write("<hr>")
+            document.write("홀수의 합 : "+ odd);
+            document.write("<hr>")
+
+            //문2) 다음식의 결과를 구하시오 홀수는 - 짝수는 +
+            //     1 - 2 + 3 - 4 + 5 ... -100 = -50 
+            /*let hap=0;
+            flag=false;
+            for(let a=1; a<=100; a=a+1) {
+                if(flag){
+                    hap=hap-a;
+                    flag=false;
+                } else {
+                    hap=hap+a;
+                    flag=true;
+                }//if end
+            }//for end */
+           
+            let hap=0;
+
+              for(let a=1; a<=100; a=a+1) {
+                if(a%2==0) {
+                 hap=hap-a;
+                } else {
+                    hap=hap+a;
+                }//if end
+            }//for end 
+
+
+            document.write("1 - 2 + 3 - 4 + 5 ... - 100=" + hap);
+            document.write("<hr>")
+
+
+        </script>
+
+    </body>
+</html>
