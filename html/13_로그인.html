@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>13_로그인.html</title>
+    </head>
+    <body>
+
+        <!-- 참조 : 동행복권 로그인 -->
+        <!-- https://www.dhlottery.co.kr/user.do?method=login&returnUrl= -->
+
+        <h3>LOGIN</h3>
+        <!-- 사용자 입력한 정보는 <form>단위로 서버로 전송됨 -->
+        <form>
+            <table border="1">
+                <tr>
+                    <th>아이디</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td rowspan="2">
+                        <input type="submit" value="로그인">
+                    </td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td>
+                        <input type="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="checkbox" checked>ID저장
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="button" value="회원가입">
+                        <input type="button" value="아이디/비번찾기">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <!-- 
+            주의사항
+            예) 잘못된 경우
+                <form>
+                        <form></form>
+                </form>
+
+            예) 잘된 경우
+                <form></form>
+                <form></form>
+        -->
+
+
+
+
+    </body>
+</html>

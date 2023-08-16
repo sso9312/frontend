@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>15_form.html</title>
+    </head>
+    <body>
+
+       <!-- 참조 https://www.w3schools.com/html/html_forms_attributes.asp -->
+
+       <h3>1. 폼 관련 속성들</h3>
+       <!--
+            id=""       폼 아이디 (주로 Frontend단에서 접근시 사용)
+            name=""     폼 이름 (주로 Backend단에서 접근시 사용)
+            action=""   사용자가 입력 요청한 정보를 서버측에서 받는 페이지명 또는 명령어
+            method=""   전송방식 get 또는 post
+            enctype=""  
+       -->
+
+       <!-- method=get 사용자가 입력한 정보가 URL에 그대로 노출(엽서) -->
+       <form id="loginfrm" name="loginfrm" method="get" action="ok.jsp">
+            아이디: <input type="text" name="userid"> <hr>
+            비밀번호: <input type="password" name="userpw"> <hr>
+            <input type="submit" value="전송">
+       </form>
+       <hr>
+
+       <!-- method=post 사용자가 입력한 정보가 팩키지화해서 전송(편지봉투) -->
+       <form id="loginfrm" name="loginfrm" method="post" action="ok.jsp">
+        아이디: <input type="text" name="userid"> <hr>
+        비밀번호: <input type="password" name="userpw"> <hr>
+        <input type="submit" value="전송(post)">
+   </form>
+   <hr>
+
+   <!-- 파일 첨부해서 전송 -->
+   <form enctype="multipart/form-data">
+        첨부파일 : <input type="file">
+   </form>
+   <hr>
+
+   <h3>2. type=image</h3>
+   <form action="ok.2jsp">
+        <img src="../images/angel.png" title="천사">
+        <hr>
+
+        <!-- <img src=''> + type=submit 기능 -->
+        <input type="image" src="../images/angel.png"><!-- 그림클릭 서버이동(검색,조회)-->
+        <hr>
+
+        검색 : <input type="text" name="search">
+        <input type="image" src="../images/search.png">
+   </form>
+   <hr>
+
+   <h3>3.다양한 Input types </h3>
+   <!-- 참조 https://www.w3schools.com/html/html_form_input_types.asp -->
+
+   <!-- HTML페이지에서 노출되지는 않지만  form에 포함된 컨트롤 요소 -->
+   <form method="get" action="ok3.jsp">
+   <input type="hidden" id="page" name="page" value="3">
+   <input type="hidden" id="col" name="col" value="title">
+   <input type="submit">
+   </form>
+   <hr>
+
+   <input type="number" id="quantity" name="quantity" min="1" max="5">
+   <input type="range" id="vol" name="vol" min="0" max="50"><hr>
+
+   <input type="color"> <hr>
+   <input type="date"> <hr>
+   <input type="search"><hr>
+   <input type="time"> <hr>
+
+   <h3>4. label</h3>
+   <label for="user">이름 :</label>
+   <input type="text" id="user">
+
+    </body>
+</html>
