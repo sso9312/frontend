@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>02_inlineCSS.html</title>
+    </head>
+    <body>
+
+        <h3>1) Inline CSS</h3>
+        <!-- style="속성:값; 속성:값; ~~~"-->
+
+        <div style="width: 200px; height: 150px; background-color: red;"></div>
+        <div style="width: 100px;/*가로크기*/
+                    height: 100px;/*세로크기*/
+                    /*속성 한개 주석*/
+                    --background-color: blue;"></div>
+        <hr>
+        <div style="width: 100%; height: 100px; background-color: green;"></div>
+        <hr>
+        <div style="width: 50%; height: 100px; background-color: aqua;"></div>
+        <hr>
+
+        <!-- 참조 https://www.w3schools.com/css/css_background.asp -->
+        <!-- background 배경 관련 스타일 -->
+        <div style="width: 300px;
+                    height: 300px;
+                    background-image: url(../images/angel.png);
+                    background-repeat: no-repeat;
+                    background-position: right bottom;
+                    background-size: 20% 20%;/*가로 세로*/"></div>
+
+        <hr>
+        <!-- 참조 https://www.w3schools.com/css/css_text.asp -->
+        <!-- 텍스트 관련 스타일 -->
+        <div style="width: 300px;
+                    height: 300px;
+                    background: yellow;
+                    color: black; /*글자색*/
+                    text-decoration: underline;
+                    text-indent: 50px;
+                    text-shadow: 3px 2px blue; /*그림자 수평(3) 수직(2) 파랑*/
+                    letter-spacing: -3px;        /*글자간격*/
+                    line-height: 20px;           /*줄간격*/
+                    word-spacing: 10px;          /*단어간격*/">
+            교육부도 이에 따라 교원의 정당한 생활 지도 범위와 방식 등을 담은 고시를 마련하고
+            학생인권조례 개정과 중대한 교권 침해 사안에 대한 학교생활기록부 기재를 추진한다.
+            이주호 사회부총리 겸 교육부 장관은 이날 서울 영등포구 교사노동조합연맹에서
+            교권 보호·회복에 대한 현장 교원 간담회를 열고 "일선 현장에서 활용할 수 있는 구체적인
+            생활 지도 범위·방식을 규정한 교육부 고시안을 8월까지 조속히 마련하겠다"고 밝혔다.
+        </div>     
+        
+        <hr>
+        <textarea cols="30" rows="10" style="background-image: url(../images/coffee.png);
+                                             background-repeat: no-repeat;
+                                             background-position: right bottom;
+                                             background-size: 30% 30%;"></textarea>
+
+    </body>
+</html>
