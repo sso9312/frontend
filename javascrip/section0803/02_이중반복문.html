@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>02_이중반복문.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>이중 반복문</h3>
+
+        <script>
+        
+        for(let a=1; a<=2; a=a+1){
+            document.write("JAVA");
+
+            for(let b=1; b<=3; b=b+1) {
+                document.write("PYTHON");
+            }//for end
+            document.write("<hr>");
+        }//for end
+        /*
+            a=1 1<=2 JAVA
+                     b=1 1<=3 PYTHON
+                         2<=3 PYTHON
+                         3<=3 PYTHON
+                         4<=3
+                2<=2 JAVA
+                     b=1 1<=3 PYTHON
+                         2<=3 PYTHON      
+                         3<=3 PYTHON      
+                         4<=3       
+                               
+        */
+
+        //문제) 구구단 2단~9단 출력하기
+        for(let dan=2; dan<=9; dan=dan+1) {
+            
+            document.write(dan+"단<br>");
+            for(let i=1; i<=9; i=i+1) {
+                document.write(dan + "*" + i + "=" +(dan*i));
+                document.write("<br>");
+            }//for end
+
+            document.write("<hr>");
+
+        }//for end
+        //////////////////////////////////////////////
+        //문제)    2g, 3g, 5g짜리 추가 각각 5개씩 있을때,
+        //      세가지의 추의 조합으로 무게가 40~45사이일 때
+        //      각 추의 갯수와 무게를 출력하는 프로그램
+        /*
+            출력결과
+            2g    3g     5g     total
+            1     5      5      42
+            2     4      5      41
+            2     5      5      44
+        */
+       
+        document.write("2g      3g      5g      total<br>");
+        let total=0;
+        let count=0;
+        for(let a=1; a<=5; a++) { //2g
+            for(let b=1; b<=5; b++) { //3g
+                for(let c=1; c<=5; c++) { //5g
+                    total=(a*2) + (b*3) + (c*5);
+                   // document.write(total+"<br>");
+                   if(total>=40 && total<=45) {
+                    document.write(a +" " + b + " " +c + " " +total+"<br>") ;
+                   
+                    count = count+1;
+                  }//for end
+                }//for end
+            }//for end
+        }//for end
+        document.write("total이 40~45사이 갯수 : "+count);
+        document.write("<hr>");
+
+        ////////////////////////////////////////////////////////
+
+        //회전수 증가
+        let a=0, b=0;
+
+        for(a=1; a<=4; a++) {
+            for(b=1; b<=4; b++) {
+                document.write("#");
+            }//for end
+            document.write("<br>");
+        }//for end
+
+        for(a=1; a<=4; a++) {
+            for(b=1; b<=a; b++) {
+                document.write("@");
+            }//for end
+            document.write("<br>");
+        }//for end
+        /*
+            a=1 1<=4
+                    b=1 1<=1 @
+                2<=4
+                    b=1 1<=2 @
+                        2<=2 @
+                3<=4
+                    b=1 1<=3 @
+                        2<=3 @
+                        3<=3 @
+                4<=4  
+                    b=1 1<=4 @
+                        2<=4 @
+                        3<=4 @              
+                        4<=4 @ 
+        */
+
+        //회전수 감소
+        for(a=4; a>=1; a=a-1) {
+            for(b=1; b<=a; b=b+1) {
+                document.write("$");
+            }//for end
+            document.write("<br>");
+        }//for end
+        /*
+            a=4 4>=1
+                        b=1 1<=4    $
+                            2<=4    $
+                            3<=4    $
+                            4<=4    $
+                3>=1
+                        b=1 1<=3    $
+                            2<=3    $
+                            3<=3    $
+                2>=1            
+                        b=1 1<=2    $
+                            2<=2    $
+                1>=1
+                        b=1 1<=1    $     
+                            2<=1
+                0>=1            
+        */
+        document.write(a+b);//0+2
+        
+
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>04_변수.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>상수와 변수</h3>
+        
+        <script>
+
+            //참조 https://www.w3schools.com/js/js_variables.asp
+            
+            //1. 상수 constant
+            //-> 고정 불변의 값
+            document.write(3);
+            document.write(-5);
+            document.write(3.4);
+            document.write('A');
+            document.write("가");
+            document.write(true);
+            document.write("<hr>");
+
+            //2. 변수 variable
+            //-> 변하는 값
+            //-> 변수의 성격 : var, let, const, nothing
+
+            //  1) var
+            //  2) -> 저장되는 데이터에 따라서 변수의 자료형이 자동으로 변환된다
+            var a=3; //a라는 변수를 선언하고 3을 저장(대입연산자)
+            var b=5; 
+            var c=7; 
+            document.write(a);  //3 a라는 변수
+            document.write(b);  //5
+            document.write(c);  //7
+            document.write('a');//'a'라는 상수
+            document.write("<hr>");
+           
+            document.write(1+2+3);  //6
+            document.write("<hr>");
+            document.write(a+b+c);  //3+5+7 
+            document.write("<hr>");
+
+            var d=1.2;
+            var e="대한민국"
+            document.write(d);
+            document.write("<hr>");
+            document.write(e);
+
+            //  2) nothing
+            //  -> 변수를 선언하지 않아도 사용할 수 있다
+            name="손흥민";
+            age=25;
+            height=178.5;
+            document.write(name);
+            document.write(age);
+            document.write(height);
+            document.write("<hr>");
+
+            //변수는 새로운 값으로 대입하면서 사용한다
+            a=2;
+            b=4;
+            c=6;
+
+            name="김연아";
+            age=30;
+            height=165.9;
+
+            document.write(a);
+            document.write(b);
+            document.write(c);
+            
+            document.write(name);
+            document.write(age);
+            document.write(height);
+            document.write("<hr>");
+
+            //  3) let
+            //  ->반드시 변수를 선언하고 사용한다
+            let i=2;
+            let j=4;
+            let k=i+j;
+            document.write(i);
+            document.write(j);
+            document.write(k);
+            document.write("<hr>");
+
+            //에러 already. let으로 선언한 i변수를 이중으로 선언할 수 없다
+            //let i=8;
+
+            //  4) const
+            // -> 변수를 상수화
+            const x=10;
+            document.write(x);
+
+            //에러. 변수값을 바꿀 수 없다
+            //x=9;
+            
+        </script>
+    </body>
+</html>

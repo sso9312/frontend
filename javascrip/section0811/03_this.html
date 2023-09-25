@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>03_this.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>this</h3>
+        <!-- 주의사항 <FORM> 요소에서 this.form은 undefined 주의!! -->
+        <form name="myform" id="myform" onsubmit="return test6(this)">
+            <input type="button" name="btn1" id="btn1" value="버튼1" onclick="test1()">
+            
+            <hr><!-- this 라는 문자열 -->
+            <input type="button" name="btn2" id="btn2" value="버튼2" onclick="test2('this')">
+            
+            <hr><!-- this 키워드 -->
+            <input type="button" name="btn3" id="btn3" value="버튼3" onclick="test3(this)">
+            
+            <hr><!-- this.value 자신의 요소가 가지고 있는 실제 값  -->
+            <input type="button" name="btn4" id="btn4" value="버튼4" onclick="test4(this.value)">
+        
+            <hr><!-- this.form 자신의 요소가 속해 있는 폼. 여기서는 <form name=myform>을 가리킴 -->
+            <input type="button" name="btn5" id="btn5" value="버튼5" onclick="test5(this.form)">
+
+            <hr> <!-- onsubmit이벤트는 리턴값이 true이면 전송된다 -->
+            <input type="submit" value="전송">
+
+            <hr><!-- this키워드는 폼컨트롤요소에서 사용 -->
+            <a href="#" onclick="test7(this)">아이티윌</a>
+        </form>
+        <script>
+            //참조 https://www.w3schools.com/js/js_this.asp
+            /*
+                ●[this]
+                 -자기 자신의 요소를 가리킴
+                 - 폼 컨드롤 요소에서만 사용가능
+                 예) <a href="" onclick="test(this)"></a>
+                    여기에서 this는 쓰레기값이므로 주의!!!
+            */
+           function test1(){
+                //1)name접근 (비추천)
+                let f=document.myform;
+                alert(f); //[Object HTMLFormElement]
+                alert(f.btn1);//[Object HTMLInputElement]
+                alert(f.btn1.value);//버튼1
+                //2)id접근 (추천)
+                alert(document.getElementById("btn1").value);//버튼1
+            }//test1() end
+
+           function test2(obj){
+                alert(obj); //'this'
+           }//test2() end
+           
+           function test3(obj){
+            alert(obj);//[Object HTMLInputElement]
+            alert(obj.value);//버튼3
+           }//test3() end
+
+           function test4(val) {
+                alert(val); //버튼4
+           }//test4() end
+
+           function test5(f){
+            alert(f);   //[Object HTMLFormElement] 여기서는 <form name=myform>을 가리킴
+            alert(f.btn5);//[Object HTMLInputElement]
+            alert(f.btn5.value);//버튼5
+           }//test5() end
+
+           function test6(f) {
+            alert(f);
+           }//test6() end
+
+           function test7(obj) {
+            alert(obj);
+           }//test7() end
+            
+        </script>
+
+    </body>
+</html>

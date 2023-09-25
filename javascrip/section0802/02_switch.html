@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>02_switch.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>switch~case문</h3>
+
+        <script>
+            //1. 값 : 실수형으로 경우수는 사용불가
+            //case값은 반드시 순차적이지 않아도 된다
+            /*
+            switch(30) {
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU"); break;
+                case 30 : document.write("BUSAN"); break;
+            }//switch end
+            */
+
+            //2. default : 목록에 값이 없으면 무조건 수행
+            /*switch(50) {
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU"); break;
+                case 30 : document.write("BUSAN"); break;
+                default : document.write("기타..."); break;
+
+            }//switch end
+            */
+
+            //3. break문이 없으면 //break가 없으면 break명령문이 있을때까지 흘러간다.
+            switch(20) {
+                case 10 : document.write("SEOUL"); break;
+                case 20 : document.write("JEJU"); 
+                case 30 : document.write("BUSAN"); break;
+                default : document.write("기타..."); break;
+            }//switch end
+
+            
+
+        </script>
+
+    </body>
+</html>

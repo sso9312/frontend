@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>06_kakaomap.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!--카카오 지도 시작하기-->
+        <!-- 강남 삼원타워 지도 띄우기-->
+
+          <!---  참조 http://pretyimo.cafe24.com/lectureRead.do?lectureno=407
+
+            1)1) Live Server
+                 카카오 지도 서비스는 Visual Studio Code 확장팩 Live Server 설치후
+                  File -> Open Folder...
+                -> 해당 파일 우클릭 Open with Live Server
+                   다음과 같이 확인 http://127.0.0.1:5500/03_kakaomap.html
+           
+                   2) 구글맵에서 위도+경도 확인
+
+           구글맵 위도, 경도가 표시 되지 않을 경우
+           구글지도 좌표 지역 설정 다른나라로 설정하면 좌표 바로 뜹니다.  
+           지역 설정은 지도 우하단에 작은 글씨 대한민국을 클릭하면 바꿀 수 있습니다.
+           기타설정 -> 언어 및 지역 -> 검색결과 지역 -> 가나
+
+           구글맵에서 "삼원타워" 검색 -> 마커 우클릭
+
+           3) 애플리케이션 추가 및 플랫폼 등록
+
+           ● appkey 받는 방법
+             https://developers.kakao.com/ 로그인
+             지도 -> 제품소개 -> 시작하기 -> 애플리케이션 추가하기 -> JavaScript 키 복사
+
+	       ● 플랫폼 설정하기
+		     내 애플리케이션 -> APP 선택 -> 플랫폼 -> 플랫폼 설정하기 -> Web 플랫폼 등록 -> http://127.0.0.1:5500
+        -->
+        <div id="map" style="width:100%;height:350px;"></div>
+
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=09c81448d6b60262896e2f39cde6eae8"></script>
+        <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new kakao.maps.LatLng(37.49895494127495, 127.03171145767139), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+        
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+        
+        // 마커가 표시될 위치입니다 
+        var markerPosition  = new kakao.maps.LatLng(37.49895494127495, 127.03171145767139); 
+        
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+        
+        var iwContent = '<div style="padding:5px;">삼원타워 <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            iwPosition = new kakao.maps.LatLng(37.49895494127495, 127.03171145767139); //인포윈도우 표시 위치입니다
+        
+        // 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            position : iwPosition, 
+            content : iwContent 
+        });
+          
+        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+        infowindow.open(map, marker); 
+        </script>
+
+    </body>
+</html>

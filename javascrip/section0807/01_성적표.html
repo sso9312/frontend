@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>01_성적표.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>성적 프로그램</h3>
+
+        <div id="demo"></div>
+        
+        <script>
+            
+            //참조/section0802/07_성적표.html
+            //문) 5명의 학생을 대상으로 평균, 등수, 과락, 평균10점당 * 한개씩, 장학생을 구한후
+            //    결과값을 표작성해서 id=demo에 출력하시오
+            /*
+                            출력결과
+                    --------------------------------------------------------
+                    이름   국어 영어 수학 평균  등수  결과
+                    --------------------------------------------------------
+                    라일락  100  100  100  100  1  합  격 ********** 장학생
+                    진달래   50   55   60   55  4  불합격 *****
+                    개나리   95   95   35   75  3  재시험 *******
+                    무궁화   80   85   90   85  2  합  격 ********
+                    홍길동   60   40   30   43  5  불합격 ****
+                    --------------------------------------------------------
+            */
+
+            let uname= ["라일락","진달래","개나리","무궁화","홍길동"];
+            let kor  = [100, 50, 95, 80, 60];
+            let eng  = [100, 55, 95, 85, 40];
+            let mat  = [100, 60, 35, 90, 30];
+
+            let size = uname.length;//5
+
+            let total=kor+eng+mat;          //총점하기
+            let aver =parseInt(total/3);    //평균구하기
+
+           //등수
+           let rank=[1, 1, 1, 1, 1];
+            
+            //문2) 과락
+            let pass="";
+            if(aver>=70){
+                if(kor<40 || eng<40 || mat<40){
+                    pass="재시험";
+                } else {
+                    pass="합격";
+                }
+            } else{
+                pass="탈락";
+            }//if end
+ 
+            //문3) 평균 10점당 * 한개씩
+            let star="";
+            for(let n=0; n<parseInt(aver/10); n++) {
+                star = star + "*";
+            } //for end
+
+            //문4) 장학생
+            let special = "";
+            if(aver>=95) {
+                special = "<span style='color:red; font-weight:bold'>장학생</span>";
+            }//if end
+
+            let result=""; //결과값
+        //result = result + "";
+        result += "<table border='1'>";    
+        result += "<tr>";    
+        result += "     <th>이름</th>";
+        result += "     <th>국어</th>";  
+        result += "     <th>영어</th>"; 
+        result += "     <th>수학</th>";  
+        result += "     <th>평균</th>";
+        result += "     <th>등수</th>";  
+        result += "     <th>결과</th>";   
+        result += "     <th>별</th>"; 
+        result += "     <th>장학생</th>"; 
+        result += "</tr>"; 
+         
+        result += "<tr>";    
+        result += "     <td>라일락</td>";    
+        result += "     <td>" + kor[0] + "</td>";
+        result += "     <td>" + eng[0] + "</td>";
+        result += "     <td>" + mat[0] + "</td>";
+        result += "     <td>" + aver[0] + "</td>";
+        result += "     <td>" + rank[0] + "</td>";
+        result += "     <td>" + star[0] + "</td>";
+        result += "     <td>" + special[0] + "</td>";
+        result += "</tr>";  
+            
+        result += "<tr>";    
+        result += "     <td>진달래</td>";    
+        result += "     <td>" + kor[1] + "</td>";
+        result += "     <td>" + eng[1] + "</td>";
+        result += "     <td>" + mat[1] + "</td>";
+        result += "     <td>" + aver[1] + "</td>";
+        result += "     <td>" + rank[1] + "</td>";
+        result += "     <td>" + star[1] + "</td>";
+        result += "     <td>" + special[1] + "</td>";
+        result += "</tr>";  
+          
+        result += "<tr>";    
+        result += "     <td>개나리</td>";    
+        result += "     <td>" + kor[2] + "</td>";
+        result += "     <td>" + eng[2] + "</td>";
+        result += "     <td>" + mat[2] + "</td>";
+        result += "     <td>" + aver[2] + "</td>";
+        result += "     <td>" + rank[2] + "</td>";
+        result += "     <td>" + star[2] + "</td>";
+        result += "     <td>" + special[2] + "</td>";
+        result += "</tr>";  
+         
+        result += "<tr>";    
+        result += "     <td>무궁화</td>";    
+        result += "     <td>" + kor[3] + "</td>";
+        result += "     <td>" + eng[3] + "</td>";
+        result += "     <td>" + mat[3] + "</td>";
+        result += "     <td>" + aver[3] + "</td>";
+        result += "     <td>" + rank[3] + "</td>";
+        result += "     <td>" + star[3] + "</td>";
+        result += "     <td>" + special[3] + "</td>";
+        result += "</tr>";  
+       
+        result += "<tr>";    
+        result += "     <td>홍길동</td>";    
+        result += "     <td>" + kor[4] + "</td>";
+        result += "     <td>" + eng[4] + "</td>";
+        result += "     <td>" + mat[4] + "</td>";
+        result += "     <td>" + aver[4] + "</td>";
+        result += "     <td>" + rank[4] + "</td>";
+        result += "     <td>" + star[4] + "</td>";
+        result += "     <td>" + special[4] + "</td>";
+        result += "</tr>"; 
+
+
+        result += "</table>"; 
+      
+
+  
+
+            
+        //본문 id=demo에 출력
+        document.getElementById("demo").innerHTML = result;
+
+
+
+
+
+
+    </script>
+    </body>
+</html>

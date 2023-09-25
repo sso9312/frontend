@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>02_형변환.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>자료형변환 (Type Conversion) </h3>
+       
+       <script>
+            //참조 https://www.w3schools.com/js/js_type_conversion.asp
+            //형변환 : 필요한 곳에서 일시적(강제적)으로 데이터의 타입을 변환
+
+            document.write(10+20);      //30
+            document.write("10"+"20");  //"1020"
+            document.write("<hr>");
+
+            //1. Number()
+            //->숫자로 구성된 문자열을 숫자형으로 변환 기능
+            //참조 https://www.w3schools.com/jsref/jsref_number.asp
+            document.write(Number("10"));              //10
+            document.write("<hr>");
+            document.write(Number("10")+Number("20")); //30
+            document.write("<hr>");                    
+            document.write(Number("10.23"));           //10.23
+            document.write("<hr>");
+
+            document.write(Number(true));              //1
+            document.write("<hr>");
+            document.write(Number(false));             //0
+            document.write("<hr>");
+
+            document.write(Number("10   "));           //10
+            document.write("<hr>");
+            document.write(Number("   10"));           //10
+            document.write("<hr>");
+            document.write(Number("KOREA"));           //NaN (Not a Number) undefined 쓰레기값
+            document.write("<hr>");
+            document.write(Number("1 2 3"));           //NaN (Not a Number)
+            document.write("<hr>");
+
+            //2. parseint()
+            //->숫자로 구성된 문자열을 정수형으로 변환
+            document.write(parseInt("10"));            //10
+            document.write("<hr>");
+            document.write(parseInt("-10"));           //-10 
+            document.write("<hr>");
+            document.write(parseInt("10.23"));         //10
+            document.write("<hr>");
+            document.write(parseInt("SEOUL"));         //NaN (Not a Number)
+            document.write("<hr>");  
+
+            //3. parseFloat()
+            //->숫자로 구성된 문자열을 실수형으로 변환
+            document.write(parseFloat("10"));          //10
+            document.write("<hr>");
+            document.write(parseFloat("10.23"));       //10.23
+            document.write("<hr>");
+            document.write(parseFloat("JAVA"));        //NaN (Not a Number)
+            document.write("<hr>");
+            ////////////////////////////////////////////////////////////////////
+
+            //4. String
+            //-> 문자형으로 변환
+            document.write(String(123));               //"123"
+            document.write("<hr>");
+            document.write(String(123)+String(456));   //"123456"
+            document.write("<hr>");
+
+            //5. toString()
+            //->문자형으로 변환
+            document.write((123).toString());          //"123"
+            document.write("<hr>");
+            document.write((123).toString()+(456).toString());          //"123456"
+            document.write("<hr>");
+            ///////////////////////////////////////////////////////////////////////
+            //오늘의 오류 닫는 script 빠짐
+
+            //6. Boolean값의 형변환
+            document.write(Number(true));   //1
+            document.write("<hr>");
+            document.write(Number(false));  //0
+            document.write("<hr>");
+            document.write(String(true));   //"true"
+            document.write("<hr>");
+            document.write(String(false));  //"false"
+            document.write("<hr>");
+            ///////////////////////////////////////////////
+
+
+            //7. evel()
+            document.write("10+20"); //"10+20"
+            document.write("<hr>");
+            document.write(eval("10+20")); //30
+            document.write("<hr>");
+
+            let x = 10;
+            let y = 20;
+            let text = "x * y";
+            document.write(text);          //"x * y"
+            document.write("<hr>");
+            document.write(eval(text));    //200
+            document.write("<hr>");
+            ///////////////////////////////////////////////////
+
+            //8.isNaN()
+            //숫자형으로 구성된 값인지? 부정문 숫자형이 아닌가요?
+            document.write(isNaN(123));     //false 긍정 제대로 입력
+            document.write("<hr>");
+            document.write(isNaN("KOREA")); //true 부정
+            document.write("<hr>");
+            document.write(isNaN(-1.23));   //false
+            document.write("<hr>");
+            document.write(isNaN("123"));   //false
+            document.write("<hr>");
+            document.write(isNaN(3.4));     //false
+            document.write("<hr>");
+
+        </script>
+    </body>
+</html>

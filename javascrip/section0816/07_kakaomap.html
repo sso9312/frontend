@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>07_kakaomap.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!--카카오 지도 시작하기-->
+        <!-- 강남 삼원타워 지도 띄우기-->
+
+          <!---  참조 http://pretyimo.cafe24.com/lectureRead.do?lectureno=407
+
+            1)1) Live Server
+                 카카오 지도 서비스는 Visual Studio Code 확장팩 Live Server 설치후
+                  File -> Open Folder...
+                -> 해당 파일 우클릭 Open with Live Server
+                   다음과 같이 확인 http://127.0.0.1:5500/03_kakaomap.html
+           
+                   2) 구글맵에서 위도+경도 확인
+
+           구글맵 위도, 경도가 표시 되지 않을 경우
+           구글지도 좌표 지역 설정 다른나라로 설정하면 좌표 바로 뜹니다.  
+           지역 설정은 지도 우하단에 작은 글씨 대한민국을 클릭하면 바꿀 수 있습니다.
+           기타설정 -> 언어 및 지역 -> 검색결과 지역 -> 가나
+
+           구글맵에서 "삼원타워" 검색 -> 마커 우클릭
+
+           3) 애플리케이션 추가 및 플랫폼 등록
+
+           ● appkey 받는 방법
+             https://developers.kakao.com/ 로그인
+             지도 -> 제품소개 -> 시작하기 -> 애플리케이션 추가하기 -> JavaScript 키 복사
+
+	       ● 플랫폼 설정하기
+		     내 애플리케이션 -> APP 선택 -> 플랫폼 -> 플랫폼 설정하기 -> Web 플랫폼 등록 -> http://127.0.0.1:5500
+        -->
+        <div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=09c81448d6b60262896e2f39cde6eae8"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.49890386999615, 127.03192603438522), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+ 
+// 마커를 표시할 위치와 title 객체 배열입니다 
+var positions = [
+    {
+        title: '삼원타워', 
+        latlng: new kakao.maps.LatLng(37.49890386999615, 127.03192603438522)
+    },
+    {
+        title: '갓덴스시', 
+        latlng: new kakao.maps.LatLng(37.49892940563993, 127.02896487573419)
+    },
+    {
+        title: '롯데리아 역삼점', 
+        latlng: new kakao.maps.LatLng(37.49869107262522, 127.03054201458093)
+    },
+    {
+        title: '역삼까치공원',
+        latlng: new kakao.maps.LatLng(37.497397251557956, 127.03070294711634)
+    }
+];
+
+// 마커 이미지의 이미지 주소입니다
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+    
+for (var i = 0; i < positions.length; i ++) {
+    
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(24, 35); 
+    
+    // 마커 이미지를 생성합니다    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+    
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        map: map, // 마커를 표시할 지도
+        position: positions[i].latlng, // 마커를 표시할 위치
+        title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        image : markerImage // 마커 이미지 
+    });
+}
+</script>
+
+    </body>
+</html>

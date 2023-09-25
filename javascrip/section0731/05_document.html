@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>05_document.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>document 객체</h3>
+        
+        <div id="demo"></div>
+        <script>
+
+            /*
+                객체 Object
+                    ->속성(멤버변수)   객체명.속성
+                    ->메소드(멤버함수) 객체명.메소드()
+            */
+           document.write(123);
+           document.write("대한민국");
+           document.write("<hr>");
+
+           // + 연산자
+           document.write(3+5);//8
+           document.write("<hr>");
+
+           document.write(3+"5");//35 우선순위 ""
+           document.write("<hr>");
+
+           document.write("3"+5);//35
+           document.write("<hr>");
+
+           document.write("3"+"5");//35
+           document.write("<hr>");
+
+           document.write("Korea"+"Seoul");//KoreaSeoul
+           document.write("<hr>");
+
+           document.write("서울특별시"+"강남구"+"역삼동");//서울특별시강남구역삼동
+           document.write("<hr>");
+
+           document.write("3+5");//3+5
+           document.write("<hr>");
+           ////////////////////////////////////////////////////
+
+
+            let name="손흥민";
+            let age=25;
+            let height=178.9;
+
+            document.write("이름" + name + "<hr>");
+            document.write("나이" + age + "<hr>");
+            document.write("키" + height + "<hr>");
+            /////////////////////////////////////////////////
+
+            //자바스크립트에서 HTML tag사용시 문자열 처리해서 사용한다
+            document.write("개나리<br><p>진달래</p>")
+            document.write("<img src='../../images/monkey.png'>")
+            document.write("<hr>");
+
+            ///////////////////////////////////////////////////////
+
+            let str=""; //빈문자열 (글자갯수 0개)
+            
+            document.write("#" + str + "#");
+            document.write("<hr>");
+           
+            str=str+"ONE";
+            document.write(str);    //ONE
+            document.write("<hr>");
+
+            str=str+"TWO";  //ONETWO
+            document.write(str);     //ONETWO
+            document.write("<hr>");
+
+            str=str+"THREE";  //ONETWOTHREE
+            document.write(str);      //ONETWOTHREE
+            document.write("<hr>");
+
+            str="";//문자열 지우기
+            document.write("#" + str + "#");
+            document.write("<hr>");
+
+            ////////////////////////////////////////////////
+            
+
+            //본문 <body>에 있는  id 속성 접근
+
+            //1) 순수 JavaScripe 접근
+            //document.getElementById("demo");
+            //document.getElementById("demo");.innerText="아이티윌"
+
+            //2) JQuery 접근 (JQuery라이브러리 필요함)
+            //$)("demo");
+            //$()"demo");. val("아이티윌");
+       
+            //연습) 이름. 나이, 키 값들을 표작성을 해서 id=demo에 출력하시오
+            name="김연아";
+            age=30;
+            height=165.7;
+
+            let result=""; //결과값
+            result = result + "<table border='1'>";
+            result = result + "<tr>";
+            result = result + "     <th>이름</th>";
+            result = result + "     <td>" + name + "</td>";
+            result = result + "</tr>";
+            result = result + "<tr>";
+            result = result + "     <th>나이</th>";
+            result = result + "     <td>" + age + "</td>";
+            result = result + "</tr>";
+            result = result + "<tr>";
+            result = result + "     <th>키</th>";
+            result = result + "     <td>" + height + "</td>";
+            result = result + "</tr>";
+            result = result + "</table>";
+
+            //결과값을 문자열 출력
+            //document.getElementById("demo").innerText = result;
+
+            //결과값을 HTML tag형식으로 출력
+            document.getElementById("demo").innerHTML = result;
+            //// -> JQery : $("#demo").html(result);
+       </script>
+    </body>
+</html>

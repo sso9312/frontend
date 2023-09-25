@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>04_Math.html</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <h3>Math 객체</h3>
+      
+        <script>
+         //참조 https://www.w3schools.com/js/js_math.asp    
+         //Math : 수학 관련 객체
+
+         //객체 Object
+         //->멤버변수(property, attribue, field) + 멤버함수(method)
+         //->객체명.멤버변수
+         //->객체명.멤버함수()
+
+        document.write(Math.PI);  //. Ctrl+space 누르면 목록나옴. pI는 변수.
+        document.write("<hr>");
+        document.write(Math.E); 
+        document.write("<hr>");
+
+        document.write(Math.abs(-3));//abs절대값
+        document.write("<hr>");
+        document.write(Math.pow(2,4));//2의 4승 
+        document.write("<hr>");
+
+        document.write(Math.max(1,3));//1,3 이중에 최대값은 얼마?
+        document.write("<hr>");
+        document.write(Math.min(1,3));//1,3 이중에 최소값은 얼마?
+        document.write("<hr>");
+
+        document.write(Math.max(-3, -5, -7));//-3
+        document.write("<hr>");
+        document.write(Math.min(-3, -5, -7));//-7
+        document.write("<hr>");
+
+        document.write(Math.max(1, Math.max(2, 3)));//3
+        document.write("<hr>");
+
+        //소수점 올림 큰수 선택
+        document.write(Math.ceil(4.9));     //5
+        document.write("<hr>");
+        document.write(Math.ceil(4.4));     //5
+        document.write("<hr>");
+        document.write(Math.ceil(-4.2));    //-4
+        document.write("<hr>");
+        //소수점 버림 작은수 선택
+        document.write(Math.floor(4.9));    //4
+        document.write("<hr>");
+        document.write(Math.floor(4.4));    //4
+        document.write("<hr>");
+        document.write(Math.floor(-4.2));   //-5
+        document.write("<hr>");
+        
+        //소수점 반올림
+        document.write(Math.round(4.9));    //5
+        document.write("<hr>");
+        document.write(Math.round(4.4));    //4
+        document.write("<hr>");
+        document.write(Math.round(-4.2));   //-4
+        document.write("<hr>");
+        document.write(Math.round(-4.7));   //-5
+        document.write("<hr>");
+        /////////////////////////////////////////
+
+
+        //Math.random() : 무작위로 발생한 수 (난수) 예)게임할때
+        //random값 발생 범위 : 0.0 <= r < 1.0
+
+        //document.write(Math.random()); 1이하 랜덤값
+        //document.write(Math.random()*2); 1이상 랜덤값
+        //document.write(parseInt(Math.random()*2));// 0 1 소수점버리기
+        //document.write(parseInt(Math.random()*4));// 0 1 2 3 소수점버리기
+        //document.write(parseInt(Math.random()*6));// 012345
+        
+        //문) 주사위 1~6 사이의 수만 발생시키시오
+        document.write(parseInt(Math.random()*6)+1);// 0123456
+        document.write("<hr>");
+        
+        //문) 로또번호 1~45사이의 수만 발생시키시오
+       
+        document.write(parseInt(Math.random()*45)+1);
+        document.write("<hr>");
+
+        </script>
+
+    </body>
+</html>
