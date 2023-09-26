@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">  
+    <head>  
+        <title>02_ajax시작.html</title>
+        <meta charset="utf-8">
+        <script src="jquery-3.7.1.min.js"></script>
+    </head>
+    <body>
+
+        <button>* JSON 데이터 받아오기 *</button>
+        
+        <script>
+            $("button").click(function(){
+               // alert();
+               $.ajax("actors.json",{
+                        dataType:"json"
+                        , error:function(xhr, status, error){
+                            alert("ERROR!!");
+                            alert(xhr);     //XMLHttpRequest 객체
+                            alert(status);  //응답상황
+                            alert(error);   //Not Found 에러가 난 이유
+                        }                    
+                        ,success:function(result, status, xhr){
+                            alert("SUCCESS~~");
+                            alert(result);  //서버가 응답해준 객체형태의 메세지
+                            alert(status);  //응답상황
+                            alert(xhr);     //XMLHttpRequest 객체
+                        }
+                    });//ajax() end
+            });//click end
+        </script>
+    </body>
+</html>

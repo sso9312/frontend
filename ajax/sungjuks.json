@@ -1,0 +1,6 @@
+[
+  {"name":"양재훈", "id":"itwill", "kor":70, "eng":80, "mat":90},
+  {"name":"김우민", "id":"user1",  "kor":75, "eng":80, "mat":95},
+  {"name":"이호준", "id":"python", "kor":60, "eng":40, "mat":30},
+  {"name":"황선우", "id":"user2", "kor":80, "eng":45, "mat":100}
+]
